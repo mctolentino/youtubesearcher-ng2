@@ -13,22 +13,20 @@ let loadingGif: string = ((<any>window).__karma__) ? '' : require('../images/loa
                src="${loadingGif}">
         </h1>
       </div>
-    </div>
-    
-    <div class="row">
-      <div class="input-group input-group-lg col-md-12">
-        <search-box
-          (loading)="loading = $event"
-          (results)="updateResults($event)"
-        ></search-box>
+      <div class="row">
+        <div class="input-group input-group-lg col-md-12">
+          <search-box
+            (loading)="loading = $event"
+            (results)="updateResults($event)"></search-box>
+        </div>
       </div>
-    </div>
-    
-    <div class="row">
-      <search-result
-        *ngFor="let result of results"
-        [result]="result"
-      ></search-result>
+      <div class="panel-body">
+        <div class="row">
+          <search-result
+            *ngFor="let result of results"
+            [result]="result"></search-result>
+        </div>
+      </div>
     </div>
   `
 })
